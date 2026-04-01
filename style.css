@@ -353,8 +353,17 @@ section {
 .terminal-prompt {
   color: var(--text-dim);
   font-size: 13px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   animation: fadeIn 0.5s ease;
+}
+
+.hero-hello {
+  font-family: var(--font-mono);
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--cyan);
+  text-shadow: var(--glow-cyan);
+  margin-bottom: 6px;
+  animation: fadeIn 0.6s ease;
 }
 
 .glitch-text {
@@ -401,6 +410,22 @@ section {
 }
 
 .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.hero-photo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 280px;
+  height: 420px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 0 20px #00ff4140);
+  animation: fadeIn 1s ease;
+}
 
 .hero-ascii {
   flex: 0 0 auto;
@@ -466,10 +491,58 @@ section {
    =========================== */
 .about-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   gap: 30px;
   align-items: start;
 }
+
+/* Profile Card */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px;
+  background: var(--bg2);
+  border: 1px solid #00ff4140;
+  box-shadow: 0 0 30px #00ff4110;
+  min-width: 180px;
+}
+
+.profile-img-wrap {
+  position: relative;
+  width: 180px;
+  height: 280px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 280px;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+}
+
+.profile-glow { display: none; }
+
+.profile-name {
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--green);
+  text-shadow: var(--glow-green);
+  letter-spacing: 1px;
+}
+
+.profile-role {
+  font-size: 12px;
+  color: var(--cyan);
+}
+
+.profile-status {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.profile-status .blink { color: var(--green); }
 
 /* Skills JSON */
 .json-bracket { color: var(--cyan); }
@@ -800,9 +873,10 @@ section {
   .about-container,
   .contact-container,
   .game-container { grid-template-columns: 1fr; }
+  .profile-card { flex-direction: row; min-width: unset; flex-wrap: wrap; justify-content: center; }
   .hero { flex-direction: column; text-align: center; padding-top: 120px; }
   .hero-btns { justify-content: center; }
-  .hero-ascii { display: none; }
+  .hero-img { width: 200px; height: 300px; }
   .navbar { padding: 16px 24px; }
   .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--bg); padding: 20px; gap: 16px; border-bottom: 1px solid var(--green); }
   .nav-links.open { display: flex; }

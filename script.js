@@ -8,30 +8,23 @@ const bootLabel    = document.getElementById('boot-bar-label');
 
 const bootSequence = [
   { type: 'cmd',  text: '> BIOS v2.0.24 ... OK',                          delay: 0    },
-  { type: 'info', text: 'Checking hardware integrity...',                  delay: 700  },
-  { type: 'ok',   text: '[OK] CPU: FatihCore i9 @ 4.20GHz',               delay: 1300 },
-  { type: 'ok',   text: '[OK] RAM: 32GB DDR5 — Neon Edition',             delay: 1800 },
-  { type: 'ok',   text: '[OK] GPU: CyberForce RTX 9090',                  delay: 2200 },
-  { type: 'info', text: 'Initializing network stack...',                   delay: 2700 },
-  { type: 'ok',   text: '[OK] Network: Connected — 1Gbps',                delay: 3200 },
-  { type: 'cmd',  text: '> whoami',                                        delay: 3800 },
-  { type: 'ok',   text: 'Fatih Shauky — Web Developer & Creative Coder',  delay: 4300 },
-  { type: 'info', text: 'Role: Frontend Engineer | Level: Junior Dev',     delay: 4700 },
-  { type: 'cmd',  text: '> load_projects --all',                           delay: 5300 },
-  { type: 'info', text: 'Scanning /projects directory...',                 delay: 5800 },
-  { type: 'ok',   text: '[LOADED] portfolio-website.exe',                  delay: 6300 },
-  { type: 'ok',   text: '[LOADED] mini-arcade.exe',                        delay: 6700 },
-  { type: 'warn', text: '[PENDING] next-project.exe — coming soon',        delay: 7100 },
-  { type: 'cmd',  text: '> start_game --module=snake,target',              delay: 7700 },
-  { type: 'info', text: 'Loading game engine...',                          delay: 8200 },
-  { type: 'ok',   text: '[OK] Snake v1.0 — Ready',                        delay: 8700 },
-  { type: 'ok',   text: '[OK] Bug Crusher v1.0 — Ready',                  delay: 9100 },
-  { type: 'cmd',  text: '> mount /skills',                                 delay: 9700 },
-  { type: 'ok',   text: '[MOUNTED] HTML, CSS, JS, React, Git, Figma',     delay: 10200},
-  { type: 'info', text: 'Applying visual theme: CYBERPUNK_DARK...',        delay: 10800},
-  { type: 'ok',   text: '[OK] Theme loaded — neon green active',           delay: 11400},
-  { type: 'cmd',  text: '> boot --launch portfolio.exe',                   delay: 12000},
-  { type: 'done', text: '[ SYSTEM READY ] Welcome to FatihOS.',           delay: 12700},
+  { type: 'info', text: 'Checking hardware integrity...',                  delay: 300  },
+  { type: 'ok',   text: '[OK] CPU: FatihCore i9 @ 4.20GHz',               delay: 600  },
+  { type: 'ok',   text: '[OK] RAM: 32GB DDR5 — Neon Edition',             delay: 900  },
+  { type: 'ok',   text: '[OK] GPU: CyberForce RTX 9090',                  delay: 1200 },
+  { type: 'cmd',  text: '> whoami',                                        delay: 1600 },
+  { type: 'ok',   text: 'Fatih Shauky — Web Developer & Creative Coder',  delay: 2000 },
+  { type: 'cmd',  text: '> load_projects --all',                           delay: 2500 },
+  { type: 'ok',   text: '[LOADED] portfolio-website.exe',                  delay: 2900 },
+  { type: 'ok',   text: '[LOADED] mini-arcade.exe',                        delay: 3200 },
+  { type: 'cmd',  text: '> start_game --module=snake,target',              delay: 3600 },
+  { type: 'ok',   text: '[OK] Snake v1.0 — Ready',                        delay: 3900 },
+  { type: 'ok',   text: '[OK] Bug Crusher v1.0 — Ready',                  delay: 4200 },
+  { type: 'cmd',  text: '> mount /skills',                                 delay: 4600 },
+  { type: 'ok',   text: '[MOUNTED] HTML, CSS, JS, React, Git, Figma',     delay: 4900 },
+  { type: 'info', text: 'Applying visual theme: CYBERPUNK_DARK...',        delay: 5200 },
+  { type: 'ok',   text: '[OK] Theme loaded — neon green active',           delay: 5500 },
+  { type: 'done', text: '[ SYSTEM READY ] Welcome to FatihOS.',           delay: 5800 },
 ];
 
 const progressSteps = [3,7,13,19,24,30,36,41,47,52,57,61,65,69,72,76,80,83,86,89,92,95,98,100];
@@ -67,7 +60,8 @@ function runBoot() {
 
 // Block page scroll during boot
 document.body.style.overflow = 'hidden';
-bootScreen.addEventListener('transitionend', () => {
+bootScreen.addEventListener('transitionend', (e) => {
+  if (e.target !== bootScreen) return;
   bootScreen.style.display = 'none';
   document.body.style.overflow = '';
 });
