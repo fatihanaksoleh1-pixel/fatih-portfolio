@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fatih Shauky | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ========== BOOT SCREEN ========== -->
+  <div id="boot-screen">
+    <div class="boot-inner">
+      <div class="boot-logo">
+        <pre class="boot-ascii">
+██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+        </pre>
+        <p class="boot-version">FATIH OS v2.0.24 — Cyberpunk Edition</p>
+      </div>
+      <div id="boot-terminal" class="boot-terminal"></div>
+      <div class="boot-bar-wrap">
+        <div class="boot-bar-label" id="boot-bar-label">Initializing...</div>
+        <div class="boot-bar"><div id="boot-progress" class="boot-progress"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== EASTER EGG OVERLAY ========== -->
+  <div id="easter-egg" class="easter-egg hidden">
+    <div class="egg-window">
+      <div class="terminal-titlebar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">root@fatih-os:~#</span>
+        <span class="egg-close" onclick="closeEgg()">✕</span>
+      </div>
+      <div class="terminal-body egg-body">
+        <p class="egg-line" id="egg-content"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scanline Overlay -->
+  <div class="scanline"></div>
+
+  <!-- Matrix Canvas Background -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Particle Canvas Overlay -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="nav-logo">&gt; fatih.exe</div>
+    <ul class="nav-links">
+      <li><a href="#hero">_home</a></li>
+      <li><a href="#about">_about</a></li>
+      <li><a href="#projects">_projects</a></li>
+      <li><a href="#contact">_contact</a></li>
+      <li><a href="#game">_game</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="terminal-prompt">&gt; initializing_system...</div>
+      <h1 class="glitch-text" data-text="FATIH SHAUKY">FATIH SHAUKY</h1>
+      <div class="typing-wrapper">
+        <span class="typing-prefix">&gt; role: </span>
+        <span id="typing-text" class="typing-text"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-sub">// Building digital experiences from the terminal up.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">&gt; view_projects()</a>
+        <a href="#contact" class="btn btn-outline">&gt; hire_me()</a>
+      </div>
+    </div>
+    <div class="hero-ascii">
+      <pre id="ascii-art">
+ ______  ______  ______  __  __
+/\  ___\/\  __ \/\__  _\/\ \/\ \
+\ \  __\\ \  __ \/_/\ \/\ \ \_\ \
+ \ \_\   \ \_\ \_\ \ \_\ \ \_____\
+  \/_/    \/_/\/_/  \/_/  \/_____/
+      </pre>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="about">
+    <div class="section-header">
+      <span class="section-tag">// 01.</span>
+      <h2>about_me<span class="blink">_</span></h2>
+    </div>
+    <div class="about-container">
+      <!-- Terminal Window -->
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">about.sh</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="cmd">$ whoami</span></p>
+          <p class="output">Fatih Shauky — Web Developer & Creative Coder</p>
+          <br/>
+          <p><span class="cmd">$ cat about.txt</span></p>
+          <p class="output">Seorang developer yang passionate dalam membangun</p>
+          <p class="output">website modern dan interaktif. Suka eksplorasi</p>
+          <p class="output">teknologi baru dan menciptakan pengalaman digital</p>
+          <p class="output">yang unik dan berkesan.</p>
+          <br/>
+          <p><span class="cmd">$ cat hobbies.txt</span></p>
+          <p class="output">Coding, Gaming, Music, Design</p>
+          <br/>
+          <p><span class="cmd">$ echo $STATUS</span></p>
+          <p class="output green-text">Available for freelance &amp; collaboration ✓</p>
+          <p><span class="cmd">$</span><span class="blink">_</span></p>
+        </div>
+      </div>
+
+      <!-- Skills Window -->
+      <div class="skills-window">
+        <div class="terminal-titlebar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">skills.json</span>
+        </div>
+        <div class="terminal-body">
+          <p class="json-bracket">{</p>
+          <p class="json-line">&nbsp;&nbsp;<span class="json-key">"frontend"</span>: [</p>
+          <p class="json-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="skill-tag">HTML</span>, <span class="skill-tag">CSS</span>, <span class="skill-tag">JavaScript</span></p>
+          <p class="json-line">&nbsp;&nbsp;],</p>
+          <p class="json-line">&nbsp;&nbsp;<span class="json-key">"tools"</span>: [</p>
+          <p class="json-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="skill-tag">Git</span>, <span class="skill-tag">VS Code</span>, <span class="skill-tag">Figma</span></p>
+          <p class="json-line">&nbsp;&nbsp;],</p>
+          <p class="json-line">&nbsp;&nbsp;<span class="json-key">"learning"</span>: [</p>
+          <p class="json-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="skill-tag">React</span>, <span class="skill-tag">Next.js</span>, <span class="skill-tag">TypeScript</span></p>
+          <p class="json-line">&nbsp;&nbsp;],</p>
+          <p class="json-line">&nbsp;&nbsp;<span class="json-key">"level"</span>: <span class="json-val">"Junior Dev"</span></p>
+          <p class="json-bracket">}</p>
+        </div>
+        <!-- Skill Bars -->
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>HTML/CSS</span>
+            <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar-item">
+            <span>JavaScript</span>
+            <div class="bar"><div class="bar-fill" data-width="70%"></div></div>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar-item">
+            <span>React</span>
+            <div class="bar"><div class="bar-fill" data-width="55%"></div></div>
+            <span>55%</span>
+          </div>
+          <div class="skill-bar-item">
+            <span>Git</span>
+            <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+            <span>75%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="projects">
+    <div class="section-header">
+      <span class="section-tag">// 02.</span>
+      <h2>projects<span class="blink">_</span></h2>
+    </div>
+    <p class="section-sub">&gt; ls -la ./projects/</p>
+    <div class="projects-grid">
+
+      <div class="project-card" onclick="openProject('https://github.com/fatihanaksoleh1-pixel')">
+        <div class="project-card-header">
+          <span class="project-icon">&#9632;</span>
+          <span class="project-lang">HTML/CSS/JS</span>
+        </div>
+        <h3 class="project-title glitch-hover">Portfolio Website</h3>
+        <p class="project-desc">Website portfolio personal dengan tema cyberpunk. Menampilkan karya dan kemampuan dalam bentuk yang interaktif.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link">&gt; view_code()</span>
+          <span class="project-star">&#9733; 0</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject('#')">
+        <div class="project-card-header">
+          <span class="project-icon">&#9632;</span>
+          <span class="project-lang">JavaScript</span>
+        </div>
+        <h3 class="project-title glitch-hover">Mini Arcade</h3>
+        <p class="project-desc">Kumpulan mini game berbasis browser. Snake, Tebak Angka, dan Reaction Game dalam satu platform.</p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Canvas</span>
+          <span class="tag">Game</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link">&gt; view_code()</span>
+          <span class="project-star">&#9733; 0</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject('#')">
+        <div class="project-card-header">
+          <span class="project-icon">&#9632;</span>
+          <span class="project-lang">Coming Soon</span>
+        </div>
+        <h3 class="project-title glitch-hover">Next Project</h3>
+        <p class="project-desc">Project selanjutnya sedang dalam pengembangan. Stay tuned untuk update terbaru dari Fatih Shauky.</p>
+        <div class="project-tags">
+          <span class="tag">???</span>
+          <span class="tag">TBA</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link">&gt; coming_soon()</span>
+          <span class="project-star">&#9733; ?</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="contact">
+    <div class="section-header">
+      <span class="section-tag">// 03.</span>
+      <h2>contact<span class="blink">_</span></h2>
+    </div>
+    <p class="section-sub">&gt; establishing_connection...</p>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="terminal-window">
+          <div class="terminal-titlebar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">contact.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="cmd">$ ping fatih --location</span></p>
+            <p class="output">Indonesia &gt; Online ✓</p>
+            <br/>
+            <p><span class="cmd">$ cat links.txt</span></p>
+            <br/>
+            <div class="social-links">
+              <a href="https://github.com/fatihanaksolih1-pixel" target="_blank" class="social-link">
+                <span class="social-icon">&#9632;</span> github.com/fatih-shauky
+              </a>
+              <a href="mailto:fatih@email.com" class="social-link">
+                <span class="social-icon">&#9632;</span> fatih@email.com
+              </a>
+              <a href="#" class="social-link">
+                <span class="social-icon">&#9632;</span> instagram: @fatih.dev
+              </a>
+            </div>
+            <br/>
+            <p><span class="cmd">$</span><span class="blink">_</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <div class="terminal-window">
+          <div class="terminal-titlebar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">send_message.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p class="cmd">$ ./send_message.sh</p>
+            <br/>
+            <form id="contact-form" class="contact-form" onsubmit="sendMessage(event)" action="https://formspree.io/f/xzdkvdpg" method="POST">
+              <div class="form-group">
+                <label>&gt; name:</label>
+                <input type="text" id="name" name="name" placeholder="your_name" required />
+              </div>
+              <div class="form-group">
+                <label>&gt; email:</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label>&gt; message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="type your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary full-width">&gt; send_message()</button>
+              <p id="form-response" class="form-response"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MINI GAME ========== -->
+  <section id="game" class="game-section">
+    <div class="section-header">
+      <span class="section-tag">// 04.</span>
+      <h2>mini_game<span class="blink">_</span></h2>
+    </div>
+    <p class="section-sub">&gt; loading game module...</p>
+
+    <!-- Game Mode Tabs -->
+    <div class="game-tabs">
+      <button class="game-tab active" onclick="switchGame('snake', this)">&#9632; SNAKE.EXE</button>
+      <button class="game-tab" onclick="switchGame('target', this)">&#9632; TARGET.EXE</button>
+    </div>
+
+    <!-- ---- SNAKE PANEL ---- -->
+    <div id="panel-snake" class="game-panel active">
+      <div class="game-container">
+        <div class="game-window">
+          <div class="terminal-titlebar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">snake.exe</span>
+          </div>
+          <div class="game-ui">
+            <div class="game-info">
+              <span>SCORE: <span id="score">0</span></span>
+              <span>HIGH: <span id="highscore">0</span></span>
+              <span>LEVEL: <span id="level">1</span></span>
+            </div>
+            <canvas id="snake-canvas" width="400" height="400"></canvas>
+            <div class="game-controls">
+              <p id="game-status" class="game-status">&gt; Press SPACE or tap START to play</p>
+              <button class="btn btn-primary" id="start-btn" onclick="startGame()">[ START ]</button>
+            </div>
+            <div class="mobile-controls">
+              <div class="ctrl-row"><button class="ctrl-btn" onclick="changeDir(0,-1)">&#9650;</button></div>
+              <div class="ctrl-row">
+                <button class="ctrl-btn" onclick="changeDir(-1,0)">&#9664;</button>
+                <button class="ctrl-btn" onclick="changeDir(0,1)">&#9660;</button>
+                <button class="ctrl-btn" onclick="changeDir(1,0)">&#9654;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="game-instructions">
+          <div class="terminal-window small">
+            <div class="terminal-titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">readme.txt</span>
+            </div>
+            <div class="terminal-body">
+              <p class="cmd">$ cat snake_help.txt</p><br/>
+              <p class="output">SNAKE GAME</p>
+              <p class="output">──────────</p>
+              <p class="output">&#8594; Arrow Keys / WASD</p>
+              <p class="output">&#8594; Makan pixel merah</p>
+              <p class="output">&#8594; Jangan tabrak dinding</p>
+              <p class="output">&#8594; Jangan makan ekor sendiri</p><br/>
+              <p class="output">+10 per food | Speed↑ per level</p><br/>
+              <p class="output green-text">Good luck, hacker!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- TARGET PANEL ---- -->
+    <div id="panel-target" class="game-panel">
+      <div class="game-container">
+        <div class="game-window">
+          <div class="terminal-titlebar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">target.exe — BUG CRUSHER</span>
+          </div>
+          <div class="game-ui">
+            <div class="game-info">
+              <span>SCORE: <span id="t-score">0</span></span>
+              <span>LIVES: <span id="t-lives">&#10084;&#10084;&#10084;</span></span>
+              <span>TIME: <span id="t-time">30</span>s</span>
+            </div>
+            <canvas id="target-canvas" width="400" height="400"></canvas>
+            <div class="game-controls">
+              <p id="t-status" class="game-status">&gt; Click [ START ] to crush bugs!</p>
+              <button class="btn btn-primary" id="t-start-btn" onclick="startTargetGame()">[ START ]</button>
+            </div>
+          </div>
+        </div>
+        <div class="game-instructions">
+          <div class="terminal-window small">
+            <div class="terminal-titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">readme.txt</span>
+            </div>
+            <div class="terminal-body">
+              <p class="cmd">$ cat target_help.txt</p><br/>
+              <p class="output">BUG CRUSHER</p>
+              <p class="output">───────────</p>
+              <p class="output">&#8594; Klik target yang muncul</p>
+              <p class="output">&#8594; Target mengecil & hilang</p>
+              <p class="output">&#8594; Miss = -1 nyawa &#10084;</p>
+              <p class="output">&#8594; 30 detik per round</p><br/>
+              <p class="output">Kecil = poin lebih besar!</p>
+              <p class="output">&#9650; size bonus: small=30 pts</p>
+              <p class="output">&#9660; size bonus: big=10 pts</p><br/>
+              <p class="output red-text">Crush all the bugs!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>&gt; Fatih Shauky © 2024 — Built with <span class="green-text">HTML/CSS/JS</span></p>
+    <p class="footer-sub">// "Code is poetry written in logic."</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
