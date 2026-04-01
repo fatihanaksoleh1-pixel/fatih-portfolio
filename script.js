@@ -59,11 +59,11 @@ function runBoot() {
 }
 
 // Block page scroll during boot
-document.body.style.overflow = 'hidden';
+document.body.classList.add('booting');
 bootScreen.addEventListener('transitionend', (e) => {
   if (e.target !== bootScreen) return;
   bootScreen.style.display = 'none';
-  document.body.style.overflow = '';
+  document.body.classList.remove('booting');
 });
 
 runBoot();
@@ -81,7 +81,7 @@ setTimeout(() => {
 function skipBoot() {
   if (!skipEnabled) return;
   bootScreen.classList.add('hide');
-  document.body.style.overflow = '';
+  document.body.classList.remove('booting');
 }
 
 /* ===========================
