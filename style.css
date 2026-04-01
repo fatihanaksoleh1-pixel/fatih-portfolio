@@ -37,6 +37,11 @@ body.booting {
   overflow: hidden;
   height: 100vh;
   height: 100dvh;
+  background: #000;
+}
+
+body.booting > *:not(#boot-screen) {
+  visibility: hidden;
 }
 
 a { color: var(--green); text-decoration: none; transition: all 0.2s; }
@@ -47,11 +52,11 @@ a:hover { color: var(--cyan); text-shadow: var(--glow-cyan); }
    =========================== */
 #boot-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100dvh;
+  top: -10px;
+  left: -10px;
+  width: calc(100vw + 20px);
+  height: calc(100vh + 20px);
+  min-height: calc(100dvh + 20px);
   background: #000;
   z-index: 99999;
   display: flex;
